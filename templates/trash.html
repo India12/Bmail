@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}Trash{% endblock title %}
+
+{% block content %}
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-body message">
+      <div class="">
+        <aside class="">
+          <div class="inbox-head">
+            <h3>Trash</h3>
+            <form action="#" class="pull-right position">
+              <div class="input-append">
+                <input type="text" class="sr-input" placeholder="Search Mail">
+                <button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+          <div class="inbox-body">
+            <div class="form-group">
+              <select name="state" id="maxRows" class="form-control select-num-rows">
+                <option value="5000">Show All</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+
+            <div class="mail-option pagination-container">
+              <nav>
+                <ul class=" inbox-pagination pagination"></ul>
+              </nav>
+            </div>
+
+            <table id="mytable" class="table table-inbox">
+              <thead>
+                <tr class="tr-title">
+                  <th>DELETED MESSAGES</th>
+                  <th>MESSAGE TITLE</th>
+                  <th class="text-right">DATE / TIME</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for msg in deleted_messages %}
+                {% if msg.email_from == user.email() or msg.email_to == user.email() %}
+                <tr class="unread">
+                  {% if msg.email_from == user.email() %}
+                  <td class="ellipsis"><a href="/message/{{ msg.key.id() }}/deleted_message">To: {{ msg.email_to }}</a></td>
+                  {% else %}
+                  <td class="ellipsis"><a href="/message/{{ msg.key.id() }}/deleted_message">From: {{msg.email_from }}</a></td>
+                  {% endif %}
+                  <td class="ellipsis"><a href="/message/{{ msg.key.id() }}/deleted_message">{{ msg.title }}</a></td>
+                  <td class="text-right ellipsis">{{ msg.dateTime.strftime('%d-%m-%Y %H:%M') }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

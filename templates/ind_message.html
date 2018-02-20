@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}Message{% endblock title %}
+
+{% block content %}
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h3 class="text-center">Message</h3><br />
+      <div class="container">
+
+        <div class="row">
+          <h4 class="col-sm-3 text-right">Date: </h4>
+          <h5 class="col-sm-6">{{ ind_message.dateTime.strftime('%d-%m-%Y; %H:%M') }}</h5>
+        </div>
+
+        {% if ind_message.email_to == user.email() %}
+        <div class="row">
+          <h4 class="col-sm-3  text-right">From:</h4>
+          <h5 class="col-sm-6">{{ ind_message.email_from }}</h5>
+        </div>
+        {% else %}
+        <div class="row">
+          <h4 class="col-sm-3  text-right">To:</h4>
+          <h5 class="col-sm-6">{{ ind_message.email_to }}</h5>
+        </div>
+        {% endif %}
+
+        <div class="row">
+          <h4 class="col-sm-3 text-right">Title: </h4>
+          <h5 class="col-sm-6">{{ ind_message.title }}</h5>
+        </div>
+
+        <div class="row">
+          <h4 class="col-sm-3 text-right">Message text: </h4>
+          <br/>
+          <br/>
+          <br/>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="text" rows="20">
+              {{ ind_message.text }}
+            </textarea>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <div class="text-right">
+        <input class="btn btn-a" type="button" onclick="history.back();" value="Back"/>
+        <a href="/message/{{ ind_message.key.id() }}/send_forward"><button class="btn btn-success">Send forward</button></a>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Move to Trash</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Move to Trash</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to move this message: <em>{{ ind_message.title }}</em> to trash?</p>
+      </div>
+      <div class="modal-footer">
+        <form method="post">
+          <button type="submit" class="btn btn-default">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

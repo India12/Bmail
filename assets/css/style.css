@@ -1,0 +1,296 @@
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+/*ccs for login and all*/
+
+.ellipsis {
+    max-width: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+body.top{
+  margin-top:50px;
+  background:#eee;
+}
+.logout {
+  float: right;
+}
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+}
+.account-wall {
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title {
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    height: 1em;
+}
+.profile-email {
+    display: block;
+    padding: 0 8px;
+    font-size: 15px;
+    color: #404040;
+    line-height: 2;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.need-help {
+    display: block;
+    margin-top: 10px;
+}
+.new-account {
+    display: block;
+    margin-top: 10px;
+}
+
+/*css for aside */
+.inbox .inbox-menu ul {
+    margin-top: 30px;
+
+    padding: 0;
+    list-style: none
+}
+.inbox .inbox-menu ul li {
+    height: 30px;
+    padding: 5px 15px;
+    position: relative
+}
+.inbox .inbox-menu ul li:hover,
+.inbox .inbox-menu ul li.active {
+    background: #e4e5e6
+}
+.inbox .inbox-menu ul li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #3d3f42
+}
+.inbox .inbox-menu ul li a i {
+    margin-right: 10px
+}
+.inbox .contacts ul {
+    margin-top: 5px;
+    padding: 0;
+    list-style: none
+}
+.inbox .contacts ul li {
+    height: 30px;
+    padding: 5px 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis!important;
+    position: relative;
+    cursor: pointer
+}
+.inbox .contacts ul li .label {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    margin: 0 5px 2px 0
+}
+.inbox .contacts ul li:hover {
+    background: #e4e5e6
+}
+.weather {
+  margin: 15px;
+}
+.weather-button {
+  pointer-events: none
+}
+.form-group .btn {
+  float: right;
+  margin-left: 5px;
+}
+.btn-discard {
+  margin-left: 70px;
+}
+.btn-success, .btn-info, .btn {
+  margin-right: 5px;
+}
+.btn-a {
+  background-color: #bfbfbf;
+  color: white;
+}
+.btn-a:hover {
+  background-color: #b3b3b3;
+  color: white;
+}
+.a-info:hover, .btn-info:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+/*css for layout and inbox*/
+.inbox-body {
+    padding: 20px;
+}
+.inbox-head {
+    background: none repeat scroll 0 0 #0099ff;
+    border-radius: 4px;
+    color: #fff;
+    min-height: 80px;
+    padding: 20px;
+}
+.inbox-head h3 {
+    display: inline-block;
+    font-weight: 300;
+    margin: 0;
+    padding-top: 6px;
+}
+.inbox-head .sr-input {
+    border: medium none;
+    border-radius: 4px 0 0 4px;
+    box-shadow: none;
+    color: #8a8a8a;
+    float: left;
+    height: 40px;
+    padding: 0 10px;
+}
+.inbox-head .sr-btn {
+    background: none repeat scroll 0 0 #4d4dff;
+    border: medium none;
+    border-radius: 0 4px 4px 0;
+    color: #fff;
+    height: 40px;
+    padding: 0 20px;
+}
+.table-inbox {
+    border: 1px solid #d3d3d3;
+    margin-bottom: 0;
+}
+.table-inbox tr td {
+    padding: 12px !important;
+}
+.table-inbox tr td:hover {
+    cursor: pointer;
+    color: #808080;
+}
+.table-inbox tr.unread td {
+    background: none repeat scroll 0 0 #f7f7f7;
+    font-weight: 600;
+}
+ul.inbox-pagination {
+    float: right;
+}
+ul.inbox-pagination li {
+    float: left;
+}
+.mail-option {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.mail-option .chk-all, .mail-option .btn-group {
+    margin-right: 5px;
+}
+.inbox-pagination a.np-btn {
+    background: none repeat scroll 0 0 #fcfcfc;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px !important;
+    color: #afafaf;
+    display: inline-block;
+    padding: 5px 15px;
+}
+a.np-btn:hover {
+  background-color: #999999;
+  color: #ffffff;
+}
+
+.inbox-pagination li span {
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 7px;
+}
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+select.select-num-rows {
+  width: 150px;
+}
+textarea.form-control {
+  margin-left: 40px;
+}
+textarea.new-email {
+  margin-left: 0px;
+}

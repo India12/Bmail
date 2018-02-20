@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}New email{% endblock title %}
+
+{% block content %}
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-body message">
+      <p class="text-center">New Message</p>
+
+      <form class="form-horizontal" role="form" method="post">
+        <div class="form-group">
+          <label class="col-sm-1 control-label">From:</label>
+          <div class="col-sm-11">
+            <input type="email" name="email_from" class="form-control select2-offscreen" value="{{email}}" tabindex="-1" required>
+          </div><br /><br />
+          <label class="col-sm-1 control-label">To:</label>
+          <div class="col-sm-11">
+            <input type="email" name="email_to" class="form-control select2-offscreen" abindex="-1" required autofocus>
+          </div><br /><br />
+          <label class="col-sm-1 control-label">Title:</label>
+          <div class="col-sm-11">
+            <input name="title" class="form-control select2-offscreen" placeholder="Type title" tabindex="-1" required>
+          </div><br /><br />
+          <label class="col-sm-1 control-label"></label>
+          <div class="col-sm-11">
+            <textarea class="form-control new-email" name="text" rows="12" placeholder="Click here to enter message"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" name="Send" value="Send" class="btn btn-success">
+          <a href="/new_email"><button type="button" class="btn btn-default">Discard</button></a>
+          <input type="submit" name="Draft" value="Draft" class="btn btn-danger btn-discard">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}Restore{% endblock title %}
+
+{% block content %}
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h3 class="text-center">Do you want to restore this message?</h3><br />
+      <div class="container">
+
+        {% if ind_message_restore.email_to == user.email() %}
+        <div class="row">
+          <h4 class="col-sm-3  text-right">From:</h4>
+          <h5 class="col-sm-6">{{ ind_message_restore.email_from }}</h5>
+        </div>
+        {% else %}
+        <div class="row">
+          <h4 class="col-sm-3  text-right">To:</h4>
+          <h5 class="col-sm-6">{{ ind_message_restore.email_to }}</h5>
+        </div>
+        {% endif %}
+
+        <div class="row">
+          <h4 class="col-sm-3 text-right">Title: </h4>
+          <h5 class="col-sm-6">{{ ind_message_restore.title }}</h5>
+        </div>
+
+        <div class="row">
+          <h4 class="col-sm-3 text-right">Message text: </h4>
+          <br/>
+          <br/>
+          <br/>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="text" rows="20">
+              {{ ind_message_restore.text }}
+            </textarea>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <div class="text-right">
+        <form method="post">
+          <button type="submit" class="btn btn-info">Yes</button>
+          <input class="btn btn-a" type="button" onclick="history.back();" value="No"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

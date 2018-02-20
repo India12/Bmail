@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Bmail sign in</title>
+
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link href="assets\css\style.css" rel="stylesheet">
+</head>
+
+<body class="top">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-md-offset-4">
+        <h1 class="text-center login-title">Sign in to continue to Bmail</h1>
+        <div class="account-wall">
+          <div class="form-signin">
+            <h3 class="text-center">Login with Google</h3>
+            {% if user %}
+            <h4>Hi there: {{ user.email() }}<br /><br /><a href="/layout">Continue</a><a href="{{ logout_url }}" class="logout">Log out</a></h4>
+            {% else %}
+            <h4>Hi there: Anonymous! <br /><br />Please: <a href="{{ login_url }}" class="login">Log in</a></h4>
+            {% endif %}
+          </div>
+          <hr>
+          <h3 class="form-signin text-center">Login with email</h3> <!--It doesn't work yet-->
+
+          <form method="post" class="form-signin">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <a href="{{ login_url }}"><button class="btn btn-lg btn-primary btn-block" type="submit">
+              Sign in</button></a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+  </html>
