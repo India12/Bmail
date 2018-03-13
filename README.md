@@ -1,6 +1,7 @@
 # About
 
-Basic GAE project with Jinja templating engine
+Final Smartninja project. Email-client - not jet finished. Basic to-do list:
+
 
 # Usage
 
