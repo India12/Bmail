@@ -227,7 +227,7 @@ app = webapp2.WSGIApplication([
 ], debug=True)
 
 ''' TO - DO list:
-- login without google login;
+- login with custom login;
 - search bar - Javascript?;
 - WeatherHandler - when button - Get weather is submitted, empty layout.html is displayed - (weather is correct though);
 - create separate email users-actions or something - so that eg: when email is deleted, it is deleted only within specific user - the one that deleted email and etc.
